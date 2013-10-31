@@ -25,4 +25,5 @@ def secure_token
 	end
 end
 
-CoffeeShop::Applicaiton.config.secret_key_base = secure_token
+CoffeeShop::Application.config.secret_key_base = secure_token
+
