@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CoffeeShop - Find em and Rank 'em :: <%= yield(:title) %> </title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <title><%= full_title(yield(:title)) %> </title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
+	<div id="wrapper">
+	<header class="navbar navbar-fixed-top navbar-inverse">
+		<div class="header-logo">
+			<i class="fa fa-coffee fa-3x"></i>
+			<%= link_to "CoffeeShop", '#' %>
+		</div>
+		<div class="header-right">
+			<button class="btn btn-primary">	
+				<%= link_to "Log In", '#' %>
+			</button>
+		</div>
+	</header>
 
-<%= yield %>
+		<div class="container">
+
+	<%= yield %>
+		</div>
+	</div>
 
 </body>
 </html>

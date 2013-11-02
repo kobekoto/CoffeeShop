@@ -1,0 +1,11 @@
+$(function() {
+
+var images = [
+		'<%= image_path "signup/coffee_shop_girl.jpg" %>',
+		'<%= image_path "signup/cafe.jpg" %>',
+		'<%= image_path "signup/coffee_shop.jpg" %>',
+		'<%= image_path "signup/coffee_shop_alternate.jpg" %>'
+];
+
+$('#wrapper').backstretch(images, { duration:3000, fade: 750});
+});
