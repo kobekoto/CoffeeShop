@@ -24,6 +24,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass', '~> 3.0.1.0.rc' 
 gem 'font-awesome-sass'
 
+gem 'paperclip', "3.4.2"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
