@@ -1,0 +1,21 @@
+<% provide(:title, "Log in") %>
+<h1>Log in</h1>
+
+<h3> Let's find some coffee shops</h3>
+
+<div class="row">
+	<div class="span6 offset3">
+		<%= form_tag sessions_path do %>
+
+			<%= label_tag :email %>
+			<%= text_field_tag :email, params[:email] %>
+
+			<%= label_tag :password %>
+			<%= password_field_tag :password %>
+
+			<%= submit_tag "Log in", class: "btn btn-large btn-primary" %>
+		<% end %>
+
+		<p> Not a member? <%= link_to "Sign Up Now!", signup_path %></p>
+	</div>
+</div>
