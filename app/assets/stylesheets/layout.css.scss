@@ -13,19 +13,20 @@ html, body, #wrapper, .container { height: 100%; }
 	body { 	
 		padding-top: 60px;
 		text-align: center;
-		a { 
-			color: $white; 
-			text-decoration: none;
-			&:hover { 
-				color: $white;
-				text-decoration: none; }
-		}
+		
 
 		.navbar-inverse { 
 			display: block;
 			background-color: #303030;
 			padding: 0 50px;
 			vertical-align: text-bottom;
+			a { 
+					color: $white; 
+					text-decoration: none;
+					&:hover { 
+						color: $white;
+						text-decoration: none; }
+				}
 			.coffee-logo { 
 				float: left; 
 				padding: 10px;
@@ -46,10 +47,13 @@ html, body, #wrapper, .container { height: 100%; }
 			}
 		}
 
-		#wrapper {
-			width: 100% !important;
-			h1, h3 { color: $white; }
-	 	}
+		// #wrapper {
+		// 	width: 100% !important;
+		// 	h1, h3 { color: $white; }
+	 // 	}
+	 	.bg-signup {
+	 		h1, h3 { color: white; }
+	 	} 
 
 		.intro { 
 			margin-top: 230px; 

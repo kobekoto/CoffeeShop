@@ -5,7 +5,7 @@
 			<span>CoffeeShop</span>	
 		<% end %>
 	</div>
-	<% if signed_in? %>
+	<% if logged_in? %>
 		<ul>
 			<li><%= link_to "Users", '#' %></li>
 			<li><%= link_to "Locations", '#' %></li>
@@ -15,10 +15,10 @@
 				</a>
 				<ul class="dropdown-menu">
 					<li><%= link_to "View Profile", current_user %></li>
-					<li><%= link_to "Edit Settings", '#' %></li>
+					<li><%= link_to "Edit Settings", edit_user_path(current_user) %></li>
 					<li class="divider"></li>
 					<li>
-						<%= link_to "Sign out", logout_path, method: "delete" %>
+						<%= link_to "Log out", logout_path, method: "delete" %>
 					</li>
 				</ul>
 			</li>

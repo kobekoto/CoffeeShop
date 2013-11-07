@@ -1,21 +1,24 @@
-<% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<% provide(:title, "Log In") %>
 
-<h3> Let's find some coffee shops</h3>
+<div id="login-wrapper"
+	<h1>Log In</h1>
 
-<div class="row">
-	<div class="span6 offset3">
-		<%= form_tag sessions_path do %>
+	<h3> Let's find some coffee shops</h3>
 
-			<%= label_tag :email %>
-			<%= text_field_tag :email, params[:email] %>
+	<div class="row">
+		<div class="span6 offset3">
+			<%= form_tag sessions_path do %>
 
-			<%= label_tag :password %>
-			<%= password_field_tag :password %>
+				<%= label_tag :email %>
+				<%= text_field_tag :email, params[:email] %>
 
-			<%= submit_tag "Log in", class: "btn btn-large btn-primary" %>
-		<% end %>
+				<%= label_tag :password %>
+				<%= password_field_tag :password %>
 
-		<p> Not a member? <%= link_to "Sign Up Now!", signup_path %></p>
+				<%= submit_tag "Log In", class: "btn btn-large btn-primary" %>
+			<% end %>
+
+			<p> Not a member? <%= link_to "Sign Up Now!", signup_path %></p>
+		</div>
 	</div>
 </div>
