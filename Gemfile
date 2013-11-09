@@ -8,7 +8,7 @@ gem 'rails', '4.0.1'
 group :development, :test do 
 	gem 'sqlite3', '1.3.8'
 	gem 'rspec-rails', '2.13.1'
-	gem 'pry-rails', :group => :development
+	gem 'pry-rails' 
 	gem 'pry-debugger'
 	gem 'pry-stack_explorer'
 end

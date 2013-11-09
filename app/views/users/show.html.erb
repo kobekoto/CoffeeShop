@@ -1,3 +1,17 @@
-<%= @user.name %>, <%= @user.email %>
+<% provide(:title, @user.name) %>
+<div class="show-row">
+	<aside class="span4">
+		<div>
+			<%= image_tag @user.avatar.url(:thumb) %>
+			<span class="description"> Name</span>
+			<span> <%= @user.name %> </span> 
+			<span class="description"> Email</span>
+			<span> <%= @user.email %> </span>
+			<span class="description">CoffeeShoppin' Since </span>
+			<span> <%= @user.created_at.strftime("%B %d, %Y") %> </span>
+			<span class="description"> Location</span>
+		</div>
+	</aside>
+</div>
 
-<br><%= image_tag @user.avatar.url(:thumb) %>
+

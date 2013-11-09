@@ -3,7 +3,7 @@
 
 <div class="row">
 	<div class="span6 offset3">
-		<%= form_for @user, :url => users_path, 
+		<%= form_for @user, :url => user_path(@user), 
 				:html => { :multipart => true } do |f| %>
 			<%= render 'shared/error_messages' %>
 
@@ -15,6 +15,9 @@
 
 			<%= f.label :password %>
 			<%= f.password_field :password %>
+
+			<%= f.label :password_confirmation, "Confirm Password" %>
+			<%= f.password_field :password_confirmation %>
 
 			<%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
 		
