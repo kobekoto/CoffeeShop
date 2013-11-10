@@ -89,7 +89,10 @@ html, body, #wrapper, .container { height: 100% !important; }
 				&:hover { background-color: green; }
 			} 
 		}
-		.container { width: 960px !important;	}
+		.container { 
+			width: 960px !important;	
+			overflow: auto;
+		}
 		div.show-row {
 			float: left;
 			margin: 20px;
@@ -109,6 +112,22 @@ html, body, #wrapper, .container { height: 100% !important; }
 				font-size: 16px;
 			}
 		}
+
+		ul.neighborhoods {
+			li { 
+				width: 210px;
+				padding: 10px;
+				margin: 10px;
+				list-style: none;
+				display: inline-block;
+				img { 
+					float: left;
+					margin-bottom: 7px;
+				}
+				span { font-size: 16px; }
+			}
+		}
+
 		footer { 
 			float: left;
 			width: 100%;

@@ -1,0 +1,11 @@
+<% provide(:title, 'All Neighborhoods') %>
+<h1>NYC Neighborhoods</h1>
+
+<ul class="neighborhoods">
+	<% @neighborhoods.each do |neighborhood| %>
+		<li>
+			<%= image_tag neighborhood.avatar.url(:thumb) %>
+			<span><%= neighborhood.name %></span>
+		</li>
+	<% end %> 
+</ul>

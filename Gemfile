@@ -31,6 +31,7 @@ gem 'foursquare2'
 gem 'geocoder'
 gem 'awesome_print'
 gem 'paperclip', "3.4.2"
+gem 'figaro'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

@@ -1,4 +1,5 @@
 CoffeeShop::Application.routes.draw do
+  get "neighborhoods/index"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 

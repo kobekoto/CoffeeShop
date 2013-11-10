@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 	validates :email, format: { with: VALID_EMAIL_REGEX }, uniqueness: true
 	validates :password, length: { minimum: 6 }
-
+	
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64
 	end
