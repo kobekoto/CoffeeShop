@@ -1,0 +1,22 @@
+<% provide(:title, @neighborhood.name) %>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>
+				<%= image_tag @neighborhood.avatar.url(:medium) %>
+				<%= @neighborhood.name %>
+			</h1>
+		</section>
+	</aside>
+</div>
+
+<div class="shops-list">
+	<% if @neighborhood.shops.any? %>
+		<h3> List Of <%= @neighborhood.name %> Coffee Shops 
+				<%=@neighborhood.shops.count %>
+		</h3>
+		<ol class="shops">
+			<%= render @shops %>
+		</ol>
+	<% end %>
+</div>

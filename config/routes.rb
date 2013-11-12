@@ -1,6 +1,11 @@
 CoffeeShop::Application.routes.draw do
-  get "neighborhoods/index"
+  get "shops/show"
+  resources :neighborhoods do 
+    resources :shops
+  end
+  
   resources :users
+  # resources :shops
   resources :sessions, only: [:new, :create, :destroy]
 
   root  'pages#home' 

@@ -44,4 +44,4 @@ neighborhoods = Neighborhood.create([
 	{ name: 'Sunnyside', 						coordinates: '40.7432759, -73.9196324', :avatar => File.new("#{Rails.root}/app/assets/images/neighborhoods/sunnyside.jpg") },
 	])
 
-#coffee shop, 4bf58dd8d48988d1e0931735q
+#coffee shop, 4bf58dd8d48988d1e0931735

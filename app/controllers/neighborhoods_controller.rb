@@ -3,8 +3,16 @@ class NeighborhoodsController < ApplicationController
   	@neighborhoods = Neighborhood.all
   end
 
+  def show
+  	@neighborhood = Neighborhood.find(params[:id])
+  	if @neighborhood.shops.blank?
+  		Shop.create_shop_info(@neighborhood)
+  	end
+  	@shops = @neighborhood.shops
+  end
+
   def create
-  	@neighborhood = Neighborhood.create( user_params )
+  	@neighborhood = Neighborhood.create(user_params)
   end
 
   def user_params

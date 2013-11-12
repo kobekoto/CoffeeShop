@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131110194147) do
+ActiveRecord::Schema.define(version: 20131112034839) do
 
   create_table "neighborhoods", force: true do |t|
     t.string   "name"
@@ -22,6 +22,21 @@ ActiveRecord::Schema.define(version: 20131110194147) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "shops", force: true do |t|
+    t.string   "name"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "phone"
+    t.integer  "startAt"
+    t.integer  "endAt"
+    t.integer  "votes"
+    t.string   "twitter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "neighborhood_id"
+    t.string   "cafe_id"
   end
 
   create_table "users", force: true do |t|
@@ -39,5 +54,10 @@ ActiveRecord::Schema.define(version: 20131110194147) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+
+  create_table "users_shops", force: true do |t|
+    t.integer "user_id"
+    t.integer "shop_id"
+  end
 
 end

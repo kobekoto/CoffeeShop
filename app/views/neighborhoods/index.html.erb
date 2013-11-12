@@ -3,9 +3,13 @@
 
 <ul class="neighborhoods">
 	<% @neighborhoods.each do |neighborhood| %>
-		<li>
-			<%= image_tag neighborhood.avatar.url(:thumb) %>
-			<span><%= neighborhood.name %></span>
-		</li>
+		<%= link_to neighborhood do %>	
+			<li>
+				<%= image_tag neighborhood.avatar.url(:thumb) %>
+				<span><%= neighborhood.name %></span>
+			</li>
+		<% end %>
 	<% end %> 
 </ul>
+
+<!-- TODO: Edit pics for Tribeca, Lower East Side, Gramercy --> 

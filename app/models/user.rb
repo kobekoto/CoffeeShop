@@ -1,6 +1,26 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  email               :string(255)
+#  created_at          :datetime
+#  updated_at          :datetime
+#  password_digest     :string(255)
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  remember_token      :string(255)
+#
+
 class User < ActiveRecord::Base
 	before_save { email.downcase! }
 	before_create :create_remember_token
+
+	has_many :users_shops
+	has_many :shops, through: :users_shops 
 
 	has_secure_password
 	has_attached_file :avatar, 
