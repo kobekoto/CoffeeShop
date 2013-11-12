@@ -2,19 +2,22 @@
 #
 # Table name: shops
 #
-#  id              :integer          not null, primary key
-#  name            :string(255)
-#  latitude        :float
-#  longitude       :float
-#  phone           :string(255)
-#  startAt         :integer
-#  endAt           :integer
-#  votes           :integer
-#  twitter         :string(255)
-#  created_at      :datetime
-#  updated_at      :datetime
-#  neighborhood_id :integer
-#  cafe_id         :string(255)
+#  id                :integer          not null, primary key
+#  name              :string(255)
+#  latitude          :float
+#  longitude         :float
+#  phone             :string(255)
+#  startAt           :integer
+#  endAt             :integer
+#  votes             :integer
+#  twitter           :string(255)
+#  created_at        :datetime
+#  updated_at        :datetime
+#  neighborhood_id   :integer
+#  cafe_id           :string(255)
+#  url               :string(255)
+#  hours             :string(255)
+#  foursquare_rating :float
 #
 
 class Shop < ActiveRecord::Base
@@ -33,5 +36,15 @@ class Shop < ActiveRecord::Base
      	neighborhood.shops << a
 		end
 		return neighborhood.shops
+	end
+
+	def self.create_shop_details(shop)
+		client = Foursquare2::Client.new(:client_id => ENV["F4_CLIENT"], :client_secret => ENV["F4_CLIENT_SECRET"])
+		y = client.venue(shop.cafe_id)
+		# b = Shop.create(url: y["url"], 
+										# hours: y["hours"]["timeframes"][0]["open"][0]["renderedTime"])
+		shop.url = y["url"]
+		shop.hours = y["hours"]["timeframes"][0]["open"][0]["renderedTime"]  
+		shop.foursquare_rating = y["rating"]
 	end
 end

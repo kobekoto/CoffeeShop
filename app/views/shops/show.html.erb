@@ -1,2 +1,14 @@
-<h1>Shops#show</h1>
-<p>Find me in app/views/shops/show.html.erb</p>
+<% provide(:title, @shop.name) %>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<p> Hours: <%= @shop.hours %> </p>
+			<p> Phone: <%= @shop.phone %> </p>
+			<p> Url: <%= @shop.url %> </p>
+			<p> Foursquare_rating: <%= @shop.foursquare_rating %> </p>
+			<p> Phone:  <%= @shop.phone %> </p>
+			<p> Twitter:  @<%= @shop.twitter %> </p>
+			</h1>
+		</section>
+	</aside>
+</div>

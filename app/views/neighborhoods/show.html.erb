@@ -13,7 +13,7 @@
 <div class="shops-list">
 	<% if @neighborhood.shops.any? %>
 		<h3> List Of <%= @neighborhood.name %> Coffee Shops 
-				<%=@neighborhood.shops.count %>
+				(<%= @neighborhood.shops.count %>)
 		</h3>
 		<ol class="shops">
 			<%= render @shops %>
