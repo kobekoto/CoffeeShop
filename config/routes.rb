@@ -1,12 +1,15 @@
 CoffeeShop::Application.routes.draw do
   get "shops/show"
-  resources :neighborhoods do 
+  resources :neighborhoods do
     resources :shops
   end
   
+  #TODO: Edit Resources to include stuff you actually need
+
   resources :users
-  # resources :shops
   resources :sessions, only: [:new, :create, :destroy]
+
+  get '/shops/:id/vote' => 'shops#voting', :as => :vote
 
   root  'pages#home' 
   match '/signup',    to: 'users#new',        via: 'get'

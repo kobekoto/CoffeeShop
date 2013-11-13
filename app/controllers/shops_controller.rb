@@ -8,11 +8,20 @@ class ShopsController < ApplicationController
 		end  	
   end
 
-  def create
-  	@neighborhood = Neighborhood.create(user_params)
+  def user_params
+  	params.require(:shop).permit(:name, :latitude, :longitude, :phone, :twitter, :url, :hours, :foursquare_rating, :votes)
   end
 
-  def user_params
-  	params.require(:shop).permit(:name, :latitude, :longitude, :phone, :twitter, :url, :hours, :foursquare_rating)
+  def voting
+  	@shop = Shop.find(params[:id])
+  	@shop.liked_by current_user
+  	current_user.shops << @shop
+  	flash[:success] = "You Liked this #{@shop.name}"
+  	redirect_to root_path
   end
+
 end
+
+	
+
+

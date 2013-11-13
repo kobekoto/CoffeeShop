@@ -8,7 +8,12 @@
 			<p> Foursquare_rating: <%= @shop.foursquare_rating %> </p>
 			<p> Phone:  <%= @shop.phone %> </p>
 			<p> Twitter:  @<%= @shop.twitter %> </p>
-			</h1>
 		</section>
 	</aside>
+</div>
+
+<div>
+<%= link_to("like", vote_path(@shop), class: 'btn btn-info') %>
+
+
 </div>

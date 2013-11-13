@@ -26,6 +26,8 @@ class Shop < ActiveRecord::Base
 	has_many :users, through: :users_shops
 	belongs_to :neighborhood 
 
+	acts_as_votable
+
 	def self.create_shop_info(neighborhood)
 		client = Foursquare2::Client.new(:client_id => ENV["F4_CLIENT"], :client_secret => ENV["F4_CLIENT_SECRET"])
 		shops = []

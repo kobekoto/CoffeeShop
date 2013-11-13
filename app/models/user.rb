@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
 	before_save { email.downcase! }
 	before_create :create_remember_token
 
+	acts_as_voter
 	has_many :users_shops
 	has_many :shops, through: :users_shops 
 
