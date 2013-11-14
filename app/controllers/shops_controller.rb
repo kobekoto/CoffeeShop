@@ -4,15 +4,19 @@ class ShopsController < ApplicationController
   def show
 		@shop = Shop.find(params[:id])
 		if @shop.present?
-			Shop.create_shop_details(@shop)
-		end  	
+			Shop.create_shop_details(@shop) 
+		end
+    if @shop.photos.blank?
+      Photo.create_photo(@shop)  	
+    end
+    @photos = @shop.photos
   end
 
   def user_params
   	params.require(:shop).permit(:name, :latitude, :longitude, :phone, :twitter, :url, :hours, :foursquare_rating, :votes)
   end
 
-  def voting
+  def voting	
   	@shop = Shop.find(params[:id])
   	@shop.liked_by current_user
   	current_user.shops << @shop

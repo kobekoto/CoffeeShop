@@ -13,3 +13,12 @@
 		</div>
 	</aside>
 </div>
+<div class="show-row">
+	<% @shops.each do |shop| %>
+		<%#= link_to shop do %>
+			<li>
+				<%= shop.name %>
+			</li>
+		<%# end %>	
+	<% end %>
+</div>

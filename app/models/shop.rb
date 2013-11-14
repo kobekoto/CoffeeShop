@@ -25,7 +25,7 @@ class Shop < ActiveRecord::Base
 	has_many :users_shops
 	has_many :users, through: :users_shops
 	belongs_to :neighborhood 
-
+	has_many :photos
 	acts_as_votable
 
 	def self.create_shop_info(neighborhood)
@@ -43,8 +43,6 @@ class Shop < ActiveRecord::Base
 	def self.create_shop_details(shop)
 		client = Foursquare2::Client.new(:client_id => ENV["F4_CLIENT"], :client_secret => ENV["F4_CLIENT_SECRET"])
 		y = client.venue(shop.cafe_id)
-		# b = Shop.create(url: y["url"], 
-										# hours: y["hours"]["timeframes"][0]["open"][0]["renderedTime"])
 		shop.url = y["url"]
 		shop.hours = y["hours"]["timeframes"][0]["open"][0]["renderedTime"]  
 		shop.foursquare_rating = y["rating"]

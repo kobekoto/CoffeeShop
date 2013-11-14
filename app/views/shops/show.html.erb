@@ -17,3 +17,11 @@
 
 
 </div>
+
+<li>
+	<% @photos.each do |photo| %>
+		<%= image_tag(photo.url) %>
+	<% end %>
+		
+	<%= @photos.count %>
+</li>
