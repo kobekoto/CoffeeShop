@@ -13,6 +13,9 @@
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
 #  remember_token      :string(255)
+#  address             :string(255)
+#  latitude            :float
+#  longitude           :float
 #
 
 require 'spec_helper'

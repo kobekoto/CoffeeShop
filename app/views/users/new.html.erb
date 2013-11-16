@@ -1,26 +1,31 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+	<div class="heading-logo">
+		<i class="fa fa-coffee fa-4x"></i> <span>CoffeeShop</span>
+	</div>
 
-<div class="row">
+<div class="row sign-up">
 	<div class="span6 offset3">
 		<%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
 			<%= render 'shared/error_messages' %>
 
-			<%= f.file_field :avatar %>
+			<span class="upload">Upload Your Profile Pic</span>
+			<%= f.file_field :avatar  %>
 
-			<%= f.label :name %>
-			<%= f.text_field :name %>
+			<%= f.text_field :name, placeholder: 'Name' %>
 
-			<%= f.label :email %>
-			<%= f.text_field :email %>
+			<%= f.text_field :email, placeholder: 'Email' %>
 
-			<%= f.label :password %>
-			<%= f.password_field :password %>
+			<%= f.password_field :password, placeholder: 'Password' %>
 
-			<%= f.label :password_confirmation, "Confirmation" %>
-			<%= f.password_field :password_confirmation %>
+			<%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
+
+			<%= f.text_field :address, placeholder: 'Enter Your Zipcode' %>
 
 			<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
 		<% end %>
+	</div>
+	<div class="bottom-log-in">
+		<span> Already on CoffeeShop?</span>
+		<%= link_to "Log In", login_path %>
 	</div>
 </div>

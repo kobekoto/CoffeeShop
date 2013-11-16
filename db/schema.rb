@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131114060151) do
+ActiveRecord::Schema.define(version: 20131115195113) do
 
   create_table "neighborhoods", force: true do |t|
     t.string   "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20131114060151) do
     t.string   "url"
     t.string   "hours"
     t.float    "foursquare_rating"
+    t.string   "address"
   end
 
   create_table "users", force: true do |t|
@@ -60,6 +61,9 @@ ActiveRecord::Schema.define(version: 20131114060151) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "remember_token"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

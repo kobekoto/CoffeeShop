@@ -1,24 +1,24 @@
 <% provide(:title, "Log In") %>
 
-<div id="login-wrapper"
-	<h1>Log In</h1>
+	<div class="heading-logo">
+		<i class="fa fa-coffee fa-4x"></i> <span>CoffeeShop</span>
+	</div>
 
-	<h3> Let's find some coffee shops</h3>
+	<h3>Discover Coffee Shops In NYC</h3>
 
 	<div class="row">
 		<div class="span6 offset3">
 			<%= form_tag sessions_path do %>
 
-				<%= label_tag :email %>
-				<%= text_field_tag :email, params[:email] %>
+				<%= text_field_tag :email, params[:email], placeholder: 'Email Address' %>
 
-				<%= label_tag :password %>
-				<%= password_field_tag :password %>
+				<%= password_field_tag :password, nil,placeholder: 'Password' %>
 
-				<%= submit_tag "Log In", class: "btn btn-large btn-primary" %>
+				<%= submit_tag "Log In To CoffeeShop", class: "btn btn-large btn-primary" %>
 			<% end %>
-
-			<p> Not a member? <%= link_to "Sign Up Now!", signup_path %></p>
 		</div>
 	</div>
-</div>
+	<div class="bottom-sign-up">
+		<p> Not a member? </p>
+		<%= link_to "Sign Up Now!", signup_path, class: "btn btn-large btn-primary" %>
+	</div>

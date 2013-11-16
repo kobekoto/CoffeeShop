@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user,     only: [:edit, :update] 
 
   def index
+    @users = User.all
   end
 
   def show
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
 
   def new
   	@user = User.new
+    render layout: "signup"
   end
 
   def create
@@ -40,7 +42,7 @@ class UsersController < ApplicationController
   private
 
 	  def user_params
-	  	params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
+	  	params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :address, :latitude, :longitude)
 	  end
 
     def correct_user

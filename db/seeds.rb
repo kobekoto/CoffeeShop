@@ -6,7 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-users = User.create([{ name: "Kobe Koto", email: "kobe.koto@gmail.com", password: "password", password_confirmation: "password",  :avatar => File.new("#{Rails.root}/app/assets/images/signup/djpic.jpg") }])
+users = User.create([
+	{ name: "Kobe Koto", email: "kobe.koto@gmail.com", password: "password", password_confirmation: "password",  :avatar => File.new("#{Rails.root}/app/assets/images/user_uploads/djpic.jpg"), address: "11238" },
+	{ name: "Prince Akeem", email: "princeakeem@example.com", password: "foobar", password_confirmation: "foobar",  :avatar => File.new("#{Rails.root}/app/assets/images/user_uploads/coming_to_america.jpg"), address: "11206" },
+	{ name: "William Hung", email: "will.hung@example.com", password: "foobar", password_confirmation: "foobar",  :avatar => File.new("#{Rails.root}/app/assets/images/user_uploads/william_hung.jpg"), address: "10014" }
+	])
 
 neighborhoods = Neighborhood.create([ 
 	{ name: 'Chelsea',							coordinates: '40.7497717, -73.9976946', :avatar => File.new("#{Rails.root}/app/assets/images/neighborhoods/chelsea.jpg") },

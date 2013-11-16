@@ -10,8 +10,8 @@ $white: #FFFFFF;
 
 html, body, #wrapper, .container { height: 100% !important; }
 
-	body { 	
-		padding-top: 60px;
+	#wrapper { 	
+		margin-top: 60px !important;
 		text-align: center;
 		.navbar-inverse { 
 			display: block;

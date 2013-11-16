@@ -18,6 +18,7 @@
 #  url               :string(255)
 #  hours             :string(255)
 #  foursquare_rating :float
+#  address           :string(255)
 #
 
 class Shop < ActiveRecord::Base
@@ -27,6 +28,8 @@ class Shop < ActiveRecord::Base
 	belongs_to :neighborhood 
 	has_many :photos
 	acts_as_votable
+	reverse_geocoded_by :latitude, :longitude
+	after_validation :reverse_geocode 
 
 	def self.create_shop_info(neighborhood)
 		client = Foursquare2::Client.new(:client_id => ENV["F4_CLIENT"], :client_secret => ENV["F4_CLIENT_SECRET"])
@@ -44,7 +47,11 @@ class Shop < ActiveRecord::Base
 		client = Foursquare2::Client.new(:client_id => ENV["F4_CLIENT"], :client_secret => ENV["F4_CLIENT_SECRET"])
 		y = client.venue(shop.cafe_id)
 		shop.url = y["url"]
-		shop.hours = y["hours"]["timeframes"][0]["open"][0]["renderedTime"]  
+		if y["hours"].present? 
+			shop.hours = y["hours"]["timeframes"][0]["open"][0]["renderedTime"] 
+		else 
+			shop.hours = "N/A"
+		end
 		shop.foursquare_rating = y["rating"]
 	end
 end

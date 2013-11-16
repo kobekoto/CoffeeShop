@@ -18,6 +18,7 @@
 #  url               :string(255)
 #  hours             :string(255)
 #  foursquare_rating :float
+#  address           :string(255)
 #
 
 require 'spec_helper'
