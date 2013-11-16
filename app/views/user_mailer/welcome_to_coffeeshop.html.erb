@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>CoffeeShop </title>
+    <style type="text/css"> </style>
+  </head>
+
+  <body bgcolor="#FFF">
+    <table width="100%" bgcolor="#FFF" border="0" cellpadding="0" cellspacing="0" 
+    border-collapse="collapse">
+      <table width="700" align="center" valign="top" border-collapse="collapse">
+        <tr border-collapse="collapse">
+          <td border-collapse="collapse">
+          	<table width="100%" border="0" cellpadding="0" cellspacing="0" border-collapse="collapse" bgcolor="#303030">
+						  <tr>
+						    <td>
+						    	<!-- TODO: Configure configuration host for production and development  -->
+						      <a href="#">
+						        <%= image_tag attachments['coffeeshop_logo.jpg'].url, alt: 'CoffeeShop Logo', 
+						            width:'307', height: '72', style: 'border: none;'%>
+				          </a>
+						    </td>
+
+
+						  </tr>
+						</table>
+
+						<table style="padding:15px 15px" bgcolor="#ffffff" width="100%">
+						  <tr class="main"  cellspacing="0" cellpadding="0">
+						    <td style="font:28px Helvetica, Arial, sans-serif; color:#222; line-height:31px; padding:11px 0px;" colspan="3">
+						    What's going on <%= @user.name %>,
+						    </td>
+						  </tr>
+
+						  <tr cellspacing="0" cellpadding="0">
+						    <td style="font:16px Helvetica, Arial, sans-serif; color: #222222; line-height:22px; padding-bottom:20px;" > 
+						      You've made the right decision to use the CoffeeShop App - as now you'll be easily be able to find coffee shops in over 30 different neighborhoods in the Big Apple.
+						    </td>
+						  </tr>
+
+						  <tr cellspacing="0" cellpadding="0">
+						    <td style="font:16px Helvetica, Arial, sans-serif; color: #222222; line-height:22px; padding-bottom:20px;" > 
+						      Feel free to leave us feedback or suggestions at <a href="mailto:coffeeshopnyc.example@gmail.com" style="display: inline;" target ="_blank">coffeeshopnyc.example@gmail.com</a>
+						    </td>
+						  </tr>
+
+						  <tr cellspacing="0" cellpadding="0">
+						    <td style="font:16px Helvetica, Arial, sans-serif; color: #222222; line-height:22px; padding-bottom:25px;" colspan="2"> 
+						      Now go ahead and like a few coffee shops so your friends and other users can know which coffee shops are the best.
+						    </td>
+						  </tr>
+
+						  <tr cellspacing="0" cellpadding="0">
+						    <td style="font:16px Helvetica, Arial, sans-serif; color: #222222; line-height:22px; padding-bottom:25px;" colspan="2"> 
+						      <span style="display:block;">Have fun,</span>
+						      <span style="display:block; padding-top: 30px;">
+						        CoffeeShop Crew
+						      </span>
+						    </td>
+						  </tr>                
+						</table> 	
+
+						<table bgcolor="#303030" width="100%" style="color:#FFFFFF">
+					    <tr style="padding-bottom:1px; ">
+					      <td style="padding: 20px 0 0 15px;"> 
+					        <a style="font:12px Helvetica, Arial, sans-serif; border-bottom: 1px solid; 
+					          text-decoration:none; color: #94dfe3;" href="#">
+					          <span>Contact Us</span>
+					        </a>
+					      </td>
+					      <td style="padding: 20px 0 0 45px; width:70%" >
+					        <a style="font:12px Helvetica, Arial, sans-serif; 
+					          padding: 0 85px 10px 0px;color: #FFF; text-decoration: none;">
+					          <span>Follow CoffeeShop</span>
+					        </a>
+					      </td>
+					    </tr>
+
+					    <tr>
+					      <td>
+					      </td>
+					    </tr>
+
+					    <tr>
+					      <td style="padding: 9px 0 0 15px; width:55%;">
+					        <span style="font:11px Helvetica, Arial, sans-serif;">
+					          This message was sent to <%= mail_to @user.email, nil, style: 'color: #94dfe3' %>.  
+					          Parts of this message may contain promotional information about CoffeeShop and its services. Please do not reply to this email. 
+					        </span>
+					      </td>
+					      <td style="padding-left: 35px;" valign="top">
+					        <%= image_tag attachments['social_icons.jpg'].url, alt: 'Social Icons', width:'188', height: '52', style: 'padding-right:13px;' %>
+					      </td>
+					    </tr>
+
+					    <tr style="padding-bottom: 30px;">
+					      <td style="padding: 10px 0 30px 15px;" colspan="2">
+					        <span style="font:11px Helvetica, Arial, sans-serif; padding-bottom: 1px; display:inline-block;">
+					          COPYRIGHT © 2013 CoffeeShopz LLC, Brooklyn, NY
+					        </span><br>
+					      </td>
+					    </tr>
+						</table>	
+          </td> 
+        </tr>
+      </table>
+    </table>
+  </body>
+</html>

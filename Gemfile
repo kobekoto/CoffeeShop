@@ -12,6 +12,7 @@ group :development, :test do
 	gem 'annotate'
 	gem 'pry-debugger'
 	gem 'pry-stack_explorer'
+	gem "letter_opener"
 end
 
 group :test do 
