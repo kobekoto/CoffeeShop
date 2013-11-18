@@ -17,15 +17,13 @@ class ShopsController < ApplicationController
   end
 
   def voting	
-  	@shop = Shop.find(params[:id])
-  	@shop.liked_by current_user
-  	current_user.shops << @shop
+    @shop = Shop.find(params[:id])
   	flash[:success] = "You Liked this #{@shop.name}"
+    current_user.likes @shop
+    current_user.shops << @shop
   	redirect_to root_path
   end
 
 end
-
-	
 
 

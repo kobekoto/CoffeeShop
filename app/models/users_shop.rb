@@ -12,4 +12,5 @@ class UsersShop < ActiveRecord::Base
 belongs_to :user
 belongs_to :shop
 
+#TODO: VALIDATES UNIQUENESS OF Shop thru User
 end

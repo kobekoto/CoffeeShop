@@ -1,11 +1,22 @@
 <% provide(:title, 'Home') %>
-<div class="intro">
-	<h1> Life's like a warm cup of coffee </h1>
-	<h3> Discover amazing places to drink coffee </h3>
+<% if logged_in? %>
+	<div class="show-row">
+		<aside class="span4 user-info">
+			<%= render "shared/user_info" %>
+		</aside>
+	</div>
+	<div class="row">
+			<%= render "shared/liked_shops" %>
+	</div>
+<% else %>
+	<div class="intro">
+		<h1> Life's like a warm cup of coffee </h1>
+		<h3> Discover amazing places to drink coffee </h3>
 
-	<%= link_to signup_path do %>
-		<button class="sign-up btn btn-primary">
-			<span>Sign Up</span>
-		</button>
-	<% end %>
-</div>
+		<%= link_to signup_path do %>
+			<button class="sign-up btn btn-primary">
+				<span>Sign Up</span>
+			</button>
+		<% end %>		
+	</div>
+<% end %>

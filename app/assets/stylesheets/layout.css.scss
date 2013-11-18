@@ -8,7 +8,16 @@ $white: #FFFFFF;
 	box-sizing: border-box;
 }
 
-html, body, #wrapper, .container { height: 100% !important; }
+@import url(https://fonts.googleapis.com/css?family=Didact+Gothic);
+
+h1, h2, h3, h4, h5, h6 { 
+	font-family: 'Didact Gothic', Helvetica, sans-serif; 
+}
+
+html, body, #wrapper, .container { 
+	height: 100% !important; 
+	font-family: 'Didact Gothic', Helvetica, sans-serif;
+}
 
 	#wrapper { 	
 		margin-top: 60px !important;
@@ -75,7 +84,7 @@ html, body, #wrapper, .container { height: 100% !important; }
 		}
 
 	 	.bg-signup {
-	 		h1, h3 { color: white; }
+	 		h1, h3 { color: $white; }
 	 	} 
 
 		.intro { 
@@ -95,30 +104,114 @@ html, body, #wrapper, .container { height: 100% !important; }
 		}
 		div.show-row {
 			float: left;
-			margin: 20px;
+			margin: 20px 10px;
 			padding: 20px;
-			border-right: 1px solid #e5e5e1;
 			img, span { 
 				float: left;
 				display: block;
-				
+				clear: both;
 			}
 			span { 
 				padding-top: 10px;
+				font-size: 16px;
 				clear: both; 
 			}
 			.description { 
 				font-weight: bold;
-				font-size: 16px;
+				font-size: 22px;
+			}
+			img.static-map { margin-top: 15px;}
+		}
+
+		.shop-info {
+			section {
+				margin: 15px 30px;
+				width: 500px;
+				border: 3px solid #ECEAE8;
+				float: left;
+				.shop-contents { 
+					float: left; 
+					clear: both;
+					padding: 10px 20px;
+					font-size: 14px;
+					text-align: left;
+					span { 
+						font-size: 20px;
+						font-weight: bold;
+					}
+				}
+				h1 { 
+					display: block; 
+					padding: 10px 20px;
+				}
+			}
+			h1 { float: left;}
+			.shop-map {	
+				float: right; 
+				margin: 15px 30px;
+			}
+		}
+
+		ul.photos { 
+			margin-top: 20px;
+			padding-left: 11px;
+			float: left;
+			list-style: none;
+			clear: both; 
+		}
+
+		h2.photos-heading {
+			margin-left: 5px;
+			text-align: left;
+		}
+
+		div.like-action { 
+			margin: 15px 0px;
+			clear: both; 
+			.btn-info { 
+				font-size: 20px;
+				margin-right: 120px;
+				width: 220px;
+				height: 50px;
+			}
+		}
+
+		.neighborhood-top {
+			h1 { float: left; }
+			img { 
+				float: left; 
+				padding: 10px 50px;
+			}
+		}
+
+		div.shops-list {
+			ol.shops {
+				margin-top: 20px;
+				li { 
+					overflow: auto;
+					padding: 10px 0;
+					border-top: 1px dotted gray;
+				}
+				a { 
+					float: left;
+					display: block;
+					font-size: 28px;
+				}
+				span { 
+					float: left;
+					clear: both;
+					text-align: left;					
+				}
 			}
 		}
 
 		ul.neighborhoods {
+			list-style: none;
+			a:hover { text-decoration: none;}
 			li { 
 				width: 210px;
 				padding: 10px;
 				margin: 10px;
-				list-style: none;
 				display: inline-block;
 				img { 
 					float: left;
@@ -128,7 +221,58 @@ html, body, #wrapper, .container { height: 100% !important; }
 			}
 		}
 
-		footer { 
+
+		ul.users {
+			margin-top: 30px;
+			list-style: none;
+			li { 
+				overflow: auto;
+				padding: 10px 0;
+				border-top: 1px solid gray;
+				}
+				img { float: left; }
+				span { 
+					margin-left: 10px;
+					float: left;
+					font-size: 20px;
+				}
+		}
+
+		.liked-shops {
+			float: left;
+			text-align: left;
+			padding-left: 15px;
+			border-left: 1px solid #e5e5e1;
+			ul {
+				padding-left: 0px;
+				list-style: none;
+				li.name-header {
+					font-weight: bold;
+					font-size: 22px;
+					@extend li.name;
+				}
+				li.address-header {
+					@extend li.name-header;
+				}
+				li.name {
+					float: left;
+					text-align: left;
+					width: 250px;
+				 }
+				li.address {
+					text-align: left;
+				} 
+			}
+			ul.heading { 
+				float: left;
+				width: 550px;
+				display: block;
+				padding-left: 0px;
+				margin-bottom: 20px;
+			}
+		}
+
+		.footer { 
 			float: left;
 			width: 100%;
 			color: $white;

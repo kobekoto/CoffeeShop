@@ -1,0 +1,9 @@
+<div>
+	<%= image_tag @user.avatar.url(:medium) %>
+	<span class="description"> Name</span>
+	<span> <%= @user.name %> </span> 
+	<span class="description">CoffeeShoppin' Since </span>
+	<span> <%= @user.created_at.strftime("%B %d, %Y") %> </span>
+	<span class="description"> My Zipcode</span>
+	<%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x247&sensor=false&zoom=14&markers=#{@user.latitude}%2C#{@user.longitude}", class: 'static-map' %>
+</div>

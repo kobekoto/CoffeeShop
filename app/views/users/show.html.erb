@@ -1,30 +1,23 @@
 <% provide(:title, @user.name) %>
 <div class="show-row">
-	<aside class="span4">
-		<div>
-			<%= image_tag @user.avatar.url(:thumb) %>
-			<span class="description"> Name</span>
-			<span> <%= @user.name %> </span> 
-			<span class="description">CoffeeShoppin' Since </span>
-			<span> <%= @user.created_at.strftime("%B %d, %Y") %> </span>
-			<span class="description"> Location</span>
-			<%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x247&sensor=false&zoom=14&markers=#{@user.latitude}%2C#{@user.longitude}" %>
-
-		</div>
+	<aside class="span4 user-info">
+		<%= render "shared/user_info" %>
 	</aside>
 </div>
 <div class="show-row">
-	<% @shops.each do |shop| %>
-		<%#= link_to shop do %>
+	<aside class="span8 liked-shops">
+		<% @shops.each do |shop| %>
 
-			<li>
-				<%= shop.name %>
-			</li>
-			<li> 
-				<%= shop.address %>
-			</li>
-			<%#= image_tag shop.@photos.url %>
-		<%# end %>	
-	<% end %>
+
+				<li>
+					<%= shop.name %>
+				</li>
+				<li> 
+					<%= shop.address %>
+				</li>
+				<%#= image_tag shop.@photos.url %>
+			<%# end %>	
+		<% end %>
+	</aside>
 	<%= @shops.count %>
 </div>

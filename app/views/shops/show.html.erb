@@ -1,28 +1,53 @@
 <% provide(:title, @shop.name) %>
-<div class="row">
-	<aside class="span4">
-		<section>
-			<p> Hours: <%= @shop.hours %> </p>
-			<p> Phone: <%= @shop.phone %> </p>
-			<p> Url: <%= @shop.url %> </p>
-			<p> Foursquare_rating: <%= @shop.foursquare_rating %> </p>
-			<p> Phone:  <%= @shop.phone %> </p>
-			<p> Twitter:  @<%= @shop.twitter %> </p>
-			<p> Address: <%= @shop.address %></p>
-		</section>
-	</aside>
+<div class="row shop-info">
+	<section>
+		<h1> <%= @shop.name %></h1>
+		<div class="shop-contents">
+			<p> 
+				<span>Hours:</span> <%= @shop.hours %> 
+			</p>
+			<p> 
+				<span>Phone:</span> <%= @shop.phone %> 
+			</p>
+			<p> 
+				<span>Url:</span> <%= @shop.url %> 
+			</p>
+			<p> 
+				<span>Foursquare Rating:</span> 
+				<%= @shop.foursquare_rating %> 
+			</p>
+			<p> 
+				<span>Twitter:</span>  @<%= @shop.twitter %> 
+			</p>
+			<p> 
+				<span>Address:</span> <%= @shop.address %>
+			</p>
+		</div>
+	</section>
+	<div class="shop-map">
+		<%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x247&sensor=false&zoom=14&markers=#{@shop.latitude}%2C#{@shop.longitude}", class: 'static-map' %>
+	</div>
 </div>
 
-<div>
-<%= link_to("like", vote_path(@shop), class: 'btn btn-info') %>
 
 
+<div class="like-action">
+	<%= link_to("I Like This Coffee Shop", vote_path(@shop), class: 'btn btn-info') %>
 </div>
 
-<li>
+<h2 class="photos-heading"> 
+	User-Generated Photos (Via Foursquare) 
+</h2>
+
+<ul class="photos">
+	<li>
 	<% @photos.each do |photo| %>
 		<%= image_tag(photo.url) %>
 	<% end %>
-		
-	<%= @photos.count %>
-</li>
+	</li>
+</ul>
+
+
+
+
+

@@ -1,0 +1,19 @@
+<aside class="span8 liked-shops">
+	<h2><%= @user.name %>'s Liked Shops </h2>
+	<ul class="heading">
+		<li class="name-header">Coffee Shop</li>
+		<li class="address-header">Address</li>	
+	</ul>
+	<% @shops.each do |shop| %>
+		<ul>
+			<li class="name">
+				<%= shop.name %>
+			</li>
+			<li class="address"> 
+				<%= shop.address %>
+			</li>
+		</ul>
+			<%#= image_tag shop.@photos.url %>
+		<%# end %>	
+	<% end %>
+</aside>
