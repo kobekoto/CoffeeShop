@@ -3,12 +3,22 @@
 	<table>
 		<thead>
 			<tr>
-				<th>Coffee Shop</th>
+				<th class="first-heading">Coffee Shop</th>
 				<th>Address</th>
 			</tr>
 		</thead>
 
 		<tbody>
+	<% if current_user.shops.blank? %>
+		<tr>
+			<td class="name"> 
+				I'm looking empty....
+			</td>
+			<td class="address"> 
+				Go to the Neighborhoods Page and find a coffee shop!
+			</td>
+		</tr>
+	<% else %>			
 		<% @shops.each do |shop| %>
 			<tr>
 				<td class="name">
@@ -18,7 +28,8 @@
 					<%= shop.address %>
 				</td>
 			</tr>
-	<% end %>
+		<% end %>
 		</tbody>
+	<% end %>
 	</table>
 </aside>

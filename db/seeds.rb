@@ -52,15 +52,15 @@ neighborhoods = Neighborhood.create([
 	{ name: 'Sunnyside', 						coordinates: '40.7432759, -73.9196324', :avatar => File.new("#{Rails.root}/app/assets/images/neighborhoods/sunnyside.jpg") },
 	])
 
-puts "=== Seeding Neighborhood Shop Info ==="
+# puts "=== Seeding Neighborhood Shop Info ==="
 
-Neighborhood.all.each do |neighborhood|
-	Shop.create_shop_info(neighborhood)
-end
+# Neighborhood.all.each do |neighborhood|
+# 	Shop.create_shop_info(neighborhood)
+# end
 
 
-puts "=== Seeding Shop Photos ==="
+# puts "=== Seeding Shop Photos ==="
 
-Shop.all.each do |shop|
-  Photo.create_photo(shop)
-end
+# Shop.all.each do |shop|
+#   Photo.create_photo(shop)
+# end
