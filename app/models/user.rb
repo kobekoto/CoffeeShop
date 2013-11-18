@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
 	acts_as_voter
 	has_many :users_shops
 	has_many :shops, through: :users_shops 
-
+	# validates_uniqueness_of :id, :allow_blank => true
 	has_secure_password
 	has_attached_file :avatar, 
 				:styles => { :medium => "300x300>", :thumb => "150x150>", :small => "100x100#"},

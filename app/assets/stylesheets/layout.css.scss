@@ -14,6 +14,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Didact Gothic', Helvetica, sans-serif; 
 }
 
+.bg-signup {
+	h1, h3 { color: $white;}
+}
+
 html, body, #wrapper, .container { 
 	height: 100% !important; 
 	font-family: 'Didact Gothic', Helvetica, sans-serif;
@@ -55,6 +59,11 @@ html, body, #wrapper, .container {
 					display: inline; 
 					padding: 0 10px;
 					vertical-align: text-bottom;
+					a:hover {
+						opacity: 0.8;
+						background: none;
+						color: #428bca;
+					}
 				}
 				ul.dropdown-menu {
 					padding: 0 10px;
@@ -68,13 +77,19 @@ html, body, #wrapper, .container {
 							line-height: 30px;
 							padding: 3px 0;
 							&:hover { 
+								opacity: 1 !important;
 								background: none;
-								color: blue;}
+								color: blue;
+							}
 						}
 					}
 					li:last-child { border-bottom: none;}
 
-				}				
+				}	
+				a.dropdown-toggle {
+					.caret { border-top: 4px solid white;}
+				}
+			
 			}
 			.header-right { 
 				float: right;
@@ -102,10 +117,17 @@ html, body, #wrapper, .container {
 			width: 960px !important;	
 			overflow: auto;
 		}
+		div.left-profile {
+			margin-top: 0px !important;
+		}
 		div.show-row {
 			float: left;
 			margin: 20px 10px;
 			padding: 20px;
+			h1 { 
+				margin-top: 0px;
+				float: left;
+			}
 			img, span { 
 				float: left;
 				display: block;
@@ -243,32 +265,14 @@ html, body, #wrapper, .container {
 			text-align: left;
 			padding-left: 15px;
 			border-left: 1px solid #e5e5e1;
-			ul {
-				padding-left: 0px;
-				list-style: none;
-				li.name-header {
-					font-weight: bold;
-					font-size: 22px;
-					@extend li.name;
+			table {
+				th { font-size: 20px; }
+				tbody {
+					tr { height: 35px; }
 				}
-				li.address-header {
-					@extend li.name-header;
-				}
-				li.name {
-					float: left;
-					text-align: left;
-					width: 250px;
-				 }
-				li.address {
-					text-align: left;
-				} 
-			}
-			ul.heading { 
-				float: left;
-				width: 550px;
-				display: block;
-				padding-left: 0px;
-				margin-bottom: 20px;
+				.name { 
+					padding-right: 20px; 
+				}				
 			}
 		}
 
@@ -279,6 +283,12 @@ html, body, #wrapper, .container {
 			background-color: #303030; 
 			padding: 35px 20px; 
 			li { list-style: none; }
+			a { color: $white;}
+			a:hover { 
+				opacity: 0.8;
+				color: #428bca;
+				text-decoration: none;
+			}
 			ul.links {
 				float: left; 
 				display: inline-block;

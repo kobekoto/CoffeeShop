@@ -27,6 +27,7 @@ class Shop < ActiveRecord::Base
 	has_many :users, through: :users_shops
 	belongs_to :neighborhood 
 	has_many :photos
+	# validates_uniqueness_of :id, :allow_blank => true
 	acts_as_votable
 	reverse_geocoded_by :latitude, :longitude
 	before_save :reverse_geocode 

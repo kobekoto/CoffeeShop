@@ -1,11 +1,13 @@
 $(function() {
 
-var signupWrapper = $('.bg-signup')
+	var signupWrapper = $('.bg-signup')
 
-var images = [
-		'<%= image_path "signup/coffee_shop_girl.jpg" %>'
+	var images = [
+			'<%= image_path "signup/coffee_shop_girl.jpg" %>',
+	    '<%= image_path "signup/cafe.jpg" %>',
+	    '<%= image_path "signup/coffee_shop_alternate.jpg" %>',
+	    '<%= image_path "signup/coffee_shop_bw.jpg" %>'
+	];
 
-];
-
-$('.bg-signup').backstretch(images);
+	$('.bg-signup').backstretch(images);
 });

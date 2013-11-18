@@ -1,6 +1,8 @@
 <% provide(:title, 'Home') %>
 <% if logged_in? %>
-	<div class="show-row">
+	
+	<div class="left-profile show-row">
+		<h1> My Profile</h1>
 		<aside class="span4 user-info">
 			<%= render "shared/user_info" %>
 		</aside>
