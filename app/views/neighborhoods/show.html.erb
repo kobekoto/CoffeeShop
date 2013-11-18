@@ -10,9 +10,13 @@
 
 <div class="shops-list">
 	<% if @neighborhood.shops.any? %>
+		<%= will_paginate @shops, renderer: BootstrapPagination::Rails %>
 		<h3>Coffee Shops Near <%= @neighborhood.name %></h3>
 		<ol class="shops">
 			<%= render @shops %>
 		</ol>
 	<% end %>
+</div>
+<div class="paginate-end">
+<%= will_paginate @shops, renderer: BootstrapPagination::Rails %>
 </div>

@@ -35,7 +35,7 @@ class Shop < ActiveRecord::Base
 	def self.create_shop_info(neighborhood)
 		client = Foursquare2::Client.new(:client_id => ENV["F4_CLIENT"], :client_secret => ENV["F4_CLIENT_SECRET"])
 		shops = []
-		s = client.search_venues(options = {:ll => "#{neighborhood.coordinates}", :limit => 10, :intent => 'browse', :radius => 1600, :categoryId => "4bf58dd8d48988d1e0931735"})
+		s = client.search_venues(options = {:ll => "#{neighborhood.coordinates}", :limit => 35, :intent => 'browse', :radius => 1400, :categoryId => "4bf58dd8d48988d1e0931735"})
 		s["groups"].first["items"].each do |x|
 			a = Shop.create(cafe_id: x["id"], name: x["name"], latitude: x["location"]["lat"], longitude: x["location"]["lng"], phone: x["contact"]["formattedPhone"], twitter: x["contact"]["twitter"])	
 			a.save

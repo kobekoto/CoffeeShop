@@ -37,6 +37,8 @@ gem 'figaro'
 gem 'acts_as_votable', '~> 0.7.1'
 gem 'httparty'
 gem 'aws-sdk'
+gem 'will_paginate', '3.0.4'
+gem 'will_paginate-bootstrap'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

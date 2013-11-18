@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
   def show
 		@shop = Shop.find(params[:id])
 		if @shop.present?
-			Shop.create_shop_details(@shop) 
+			Shop.create_shop_details(@shop)
 		end
     if @shop.photos.blank?
       Photo.create_photo(@shop)  	

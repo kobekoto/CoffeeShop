@@ -10,7 +10,7 @@ class NeighborhoodsController < ApplicationController
   	if @neighborhood.shops.blank?
   		Shop.create_shop_info(@neighborhood)
   	end
-  	@shops = @neighborhood.shops
+  	@shops = @neighborhood.shops.paginate(page: params[:page], per_page: 10)
   end
 
   def create

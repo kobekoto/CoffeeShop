@@ -205,8 +205,19 @@ html, body, #wrapper, .container {
 				padding: 10px 50px;
 			}
 		}
+		div.paginate-end {
+			display: inline-block;
+			float: left;
+			padding-left: 40px;
+		}
 
 		div.shops-list {
+			margin-bottom: 20px;
+			ul.pagination {
+				display: block;
+				padding-left: 40px;
+				
+			}
 			ol.shops {
 				margin-top: 20px;
 				li { 
