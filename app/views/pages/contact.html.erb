@@ -3,3 +3,13 @@
 	<p>
 		You should contact us at <a href="mailto:coffeeshopnyc.example@gmail.com?Subject=Hey I've got questions about the app">coffeeshopnyc.example@gmail.com</a>
 	</p>
+
+<% if current_user.nil? %>
+
+	<%= link_to root_path do %>
+		<button class="sign-up btn btn-primary">
+			<span>Back To Home Page</span>
+		</button>
+	<% end %>		
+
+<% end %>

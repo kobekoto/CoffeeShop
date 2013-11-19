@@ -1,5 +1,14 @@
 <% provide(:title, 'About') %>
-<h3> Need to figure out where to find a quite place to study with free internet access? Then use Coffee shop!</h3>
+<h3> Need to figure out where the cool coffee shops are? Then use Coffee shop!</h3>
 
-<%# TODO: Add link to root_path for user if current_user.nil? %>
+<% if current_user.nil? %>
+
+	<%= link_to root_path do %>
+		<button class="sign-up btn btn-primary">
+			<span>Back To Home Page</span>
+		</button>
+	<% end %>		
+
+<% end %>
+
 	

@@ -20,7 +20,6 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
   	flash[:success] = "You Liked #{@shop.name} !"
     current_user.likes @shop
-    current_user.shops << @shop
   	redirect_to root_path
   end
 
