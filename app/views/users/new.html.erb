@@ -8,21 +8,7 @@
 <div class="row sign-up">
 	<div class="span6 offset3">
 		<%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
-			<%= render 'shared/error_messages' %>
-
-			<%= f.text_field :name, placeholder: 'Name' %>
-
-			<%= f.text_field :email, placeholder: 'Email' %>
-
-			<%= f.password_field :password, placeholder: 'Password' %>
-
-			<%= f.password_field :password_confirmation, placeholder: 'Confirm Password' %>
-
-			<%= f.text_field :address, placeholder: 'Enter Your Zipcode' %>
-
-			<span class="upload">Upload Your Profile Pic</span>
-
-			<%= f.file_field :avatar  %>
+			<%= render 'fields', f: f %>
 
 			<%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
 
