@@ -36,7 +36,7 @@ gem 'paperclip', "3.4.2"
 gem 'figaro'
 gem 'acts_as_votable', '~> 0.7.1'
 gem 'httparty'
-gem 'aws-sdk'
+gem 'aws-sdk', '~> 1.0'
 gem 'will_paginate', '3.0.4'
 gem 'will_paginate-bootstrap'
 
