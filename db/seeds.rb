@@ -57,10 +57,3 @@ puts "=== Seeding Neighborhood Shop Info ==="
 Neighborhood.all.each do |neighborhood|
 	Shop.create_shop_info(neighborhood)
 end
-
-
-puts "=== Seeding Shop Photos ==="
-
-Shop.all.each do |shop|
-  Photo.create_photo(shop)
-end

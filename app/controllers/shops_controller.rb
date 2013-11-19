@@ -22,7 +22,4 @@ class ShopsController < ApplicationController
     current_user.likes @shop
   	redirect_to root_path
   end
-
 end
-
-

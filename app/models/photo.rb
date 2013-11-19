@@ -16,12 +16,12 @@ class Photo < ActiveRecord::Base
 
 	def self.create_photo(shop)
 		a = HTTParty.get("https://api.foursquare.com/v2/venues/#{shop.cafe_id}/photos?&limit=5&client_id=#{ENV["F4_CLIENT"]}&client_secret=#{ENV["F4_CLIENT_SECRET"]}")
-		
 		path = a["response"]["photos"]["groups"][1]["items"][0]["sizes"]["items"][2]["url"] 
-		# if a["response"]["photos"]["groups"][1]["items"].present?
-		shop.photos << Photo.create(url: path)
-		a["response"]["photos"]["groups"][1]["items"].each do |i|
-			shop.photos << Photo.find_or_create_by_url(url: i["sizes"]["items"][2]["url"])
+		if a["response"]["photos"]["groups"][1]["items"].present?
+			shop.photos << Photo.create(url: path)
+			a["response"]["photos"]["groups"][1]["items"].each do |i|
+				shop.photos << Photo.find_or_create_by_url(url: i["sizes"]["items"][2]["url"])
+			end
 		end
 		return true
 	end
