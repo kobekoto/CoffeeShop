@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-    @shops = current_user.shops
+    @shops = current_user.find_liked_items 
   end
 
   def new
