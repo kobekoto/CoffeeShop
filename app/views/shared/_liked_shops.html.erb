@@ -9,7 +9,8 @@
 		</thead>
 
 		<tbody>
-	<% if current_user.find_liked_items.blank? %>
+		<% binding.pry %>
+	<% if @user.find_liked_items.blank? %>
 		<tr>
 			<td class="name"> 
 				This is looking empty....
