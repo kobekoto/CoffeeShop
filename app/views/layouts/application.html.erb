@@ -9,17 +9,28 @@
 	</head>
 	<body>
 		<div id="wrapper" class="<%= "bg-signup" unless logged_in? %>">
-			<%= render 'layouts/header' %>
+			<div id="header-region">
+				<%= render 'layouts/header' %>
+			</div>
 
-			<div class="container">
+			<div class="container" id="main-region">
 				<% flash.each do |key, value| %>
 					<%= content_tag(:div, value, 
 													class: "alert alert-#{key}") %>
 				<% end %>
 				<%= yield %>
 			</div>
+
+			<div id="footer-region">
 				<%= render 'layouts/footer' %>
 				<%= debug(params) if Rails.env.development? %>
+			</div>
 		</div>
 	</body>
 </html>
+
+<%= javascript_tag do %>
+	$(function() {
+		CoffeeShop.start()
+	});
+<% end %>

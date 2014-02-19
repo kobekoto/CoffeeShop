@@ -10,7 +10,7 @@ group :development, :test do
 	gem 'rspec-rails', '2.13.1'
 	gem 'pry-rails' 
 	gem 'annotate'
-	gem 'pry-debugger'
+	# gem 'pry-debugger'
 	gem 'pry-stack_explorer'
 	gem "letter_opener"
 end
@@ -39,6 +39,7 @@ gem 'httparty'
 gem 'aws-sdk', '1.26.0'	
 gem 'will_paginate', '3.0.4'
 gem 'will_paginate-bootstrap'
+gem 'eco'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
