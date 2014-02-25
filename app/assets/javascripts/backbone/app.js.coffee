@@ -1,5 +1,3 @@
-console.log @
-
 @CoffeeShop = do (Backbone, Marionette) ->
 
 	App = new Marionette.Application
@@ -10,8 +8,8 @@ console.log @
 		footerRegion: "#footer-region"
 
 	App.addInitializer ->
+		App.module("HeaderApp").start()
 		App.module("FooterApp").start()
-		# App.execute "footer:show"
 
 	App.on "initialize:after", ->
 		if Backbone.history

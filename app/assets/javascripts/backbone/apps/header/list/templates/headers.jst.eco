@@ -1,0 +1,11 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="coffee-logo">
+			<i class="fa fa-coffee fa-3x"></i>
+			<a href ="#">
+				<span>CoffeeShop</span>	
+			</a>
+	</div>
+		<ul class="nav-links">
+		</ul>
+	
+</header>
