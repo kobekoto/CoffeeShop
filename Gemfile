@@ -40,6 +40,8 @@ gem 'aws-sdk', '1.26.0'
 gem 'will_paginate', '3.0.4'
 gem 'will_paginate-bootstrap'
 gem 'eco'
+gem 'rabl'
+gem 'oj'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
