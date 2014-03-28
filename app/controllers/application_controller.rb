@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def index 
-  	gon.foo = "bar"
+  	gon.rabl
   end
 end

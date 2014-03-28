@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
+    gon.users = @users
+    gon.rabl
   end
 
   def show
